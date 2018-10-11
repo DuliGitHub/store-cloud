@@ -1,0 +1,4 @@
+rootProject.name = 'store'
+
+include "store-cloud-eureka"
+include "store-cloud-common"
