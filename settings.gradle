@@ -2,3 +2,5 @@ rootProject.name = 'store'
 
 include "store-cloud-eureka"
 include "store-cloud-common"
+include "store-cloud-service-sso-api"
+include "store-cloud-service-sso"
