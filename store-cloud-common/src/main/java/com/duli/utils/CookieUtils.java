@@ -1,4 +1,4 @@
-package cn.binux.utils;
+package com.duli.utils;
 
 
 import javax.servlet.http.Cookie;

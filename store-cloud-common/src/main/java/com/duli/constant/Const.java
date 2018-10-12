@@ -1,4 +1,4 @@
-package cn.binux.constant;
+package com.duli.constant;
 
 public final class Const {
 

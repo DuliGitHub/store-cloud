@@ -1,4 +1,4 @@
-package cn.binux.utils;
+package com.duli.utils;
 
 /**
  * Jedis 接口

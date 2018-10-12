@@ -6,7 +6,7 @@
  * 课程地址：http://www.roncoo.com/details/7ae3d7eddc4742f78b0548aa8bd9ccdb
  * ====================================================================
  */
-package cn.binux.utils;
+package com.duli.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

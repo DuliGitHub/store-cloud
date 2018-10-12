@@ -1,4 +1,4 @@
-package cn.binux.pojo;
+package com.duli.pojo;
 
 /**
  * 自定义响应结构

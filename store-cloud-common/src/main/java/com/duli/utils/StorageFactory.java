@@ -1,14 +1,14 @@
-package cn.binux.utils;
+package com.duli.utils;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import com.duli.utils.impl.FastdfsStorageService;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 
-import cn.binux.utils.impl.FastdfsStorageService;
 
 /**
  * 存储设置的工厂类

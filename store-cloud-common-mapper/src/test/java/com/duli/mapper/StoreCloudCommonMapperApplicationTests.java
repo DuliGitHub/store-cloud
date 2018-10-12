@@ -1,4 +1,4 @@
-package comduli.mapper;
+package com.duli.mapper;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

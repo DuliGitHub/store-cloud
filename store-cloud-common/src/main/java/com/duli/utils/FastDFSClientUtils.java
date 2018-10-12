@@ -1,4 +1,4 @@
-package cn.binux.utils;
+package com.duli.utils;
 
 import org.apache.commons.lang3.StringUtils;
 import org.csource.common.NameValuePair;

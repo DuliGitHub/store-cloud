@@ -1,4 +1,4 @@
-package cn.binux.utils;
+package com.duli.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

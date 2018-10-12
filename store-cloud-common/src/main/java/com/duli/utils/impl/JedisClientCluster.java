@@ -1,4 +1,4 @@
-package cn.binux.utils.impl;
+package com.duli.utils.impl;
 
 import cn.binux.utils.JedisClient;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
-package cn.binux.utils.impl;
+package com.duli.utils.impl;
 
-import cn.binux.utils.StorageService;
+import com.duli.utils.StorageService;
 import org.csource.common.NameValuePair;
 import org.csource.fastdfs.*;
 import org.slf4j.Logger;
