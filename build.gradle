@@ -134,7 +134,7 @@ project("store-cloud-service-sso-api") {
 
     dependencies {
         compile(project(":store-cloud-common"))
-//        compile(project(":store-cloud-common-pojo"))
+        compile(project(":store-cloud-common-pojo"))
         compile("org.springframework.cloud:spring-cloud-starter-feign")
     }
 }
@@ -143,7 +143,7 @@ project("store-cloud-service-sso") {
 
     dependencies {
         compile(project(":store-cloud-service-sso-api"))
-//        compile(project(":store-cloud-common-mapper"))
+        compile(project(":store-cloud-common-mapper"))
         compile("org.springframework.cloud:spring-cloud-starter-eureka")
         compile("org.springframework.cloud:spring-cloud-starter-zipkin")
         compile("org.springframework.cloud:spring-cloud-starter-hystrix")
@@ -152,6 +152,36 @@ project("store-cloud-service-sso") {
 //        compile("org.springframework.data:spring-data-redis") //鏆傛椂涓嶄娇鐢�
         compile("org.springframework.boot:spring-boot-starter-redis:${springBootRedisVersion}")
         compile("org.freemarker:freemarker:2.3.9")
+    }
+}
+project("store-cloud-common-pojo") {
+    description = "store-cloud-common-pojo"
+
+    dependencies {
+        compileOnly("org.projectlombok:lombok:${lombokVersion}")
+    }
+}
+
+project("store-cloud-common-mapper") {
+    description = "store-cloud-common-mapper"
+
+    dependencies {
+        compile(project(":store-cloud-common-pojo"))
+        compile("mysql:mysql-connector-java:${mysqlVersion}")
+        compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:${springBootMyBatisVersion}")
+        compile("com.github.pagehelper:pagehelper-spring-boot-starter:${springBootpagehelperVersion}")
+        compile("com.roncoo:roncoo-spring-boot-starter-druid:${springBootDruidVersion}")
+        compile fileTree(dir: 'src', includes: ['/*.xml'])
+    }
+    jar {
+        
+        baseName = 'store-cloud-common-mapper'
+
+        
+        from('src/main/java') {
+            include '**/*.xml'
+        }
+
     }
 }
 
