@@ -3,7 +3,6 @@ package com.duli.notify.service.impl;
 import com.duli.service.NotifyUserService;
 import com.duli.utils.FastJsonConvert;
 import com.duli.utils.JedisClient;
-import io.swagger.annotations.*;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

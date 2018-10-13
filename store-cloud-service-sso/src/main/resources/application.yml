@@ -3,13 +3,11 @@ spring:
     name: store-cloud-service-sso
   profiles:
     active: dev
-spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
     druid:
       url: jdbc:mysql://localhost:3306/store?characterEncoding=utf-8
-      driver-class: com.mysql.jdbc.Driver
       username: root
       password: 123456
       initial-size: 1

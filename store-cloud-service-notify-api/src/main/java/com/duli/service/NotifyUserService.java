@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * 用户通知服务接口
  *
- * @author xubin.
- * @create 2017-05-05
  */
 
 @FeignClient(value = "store-cloud-service-notify",fallback = NotifyUserServiceHystrix.class)

@@ -2,10 +2,11 @@ package com.duli.mapper;
 
 import com.duli.pojo.TbUserAddr;
 import com.duli.pojo.TbUserAddrExample;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
+@Mapper
 public interface TbUserAddrMapper {
     int countByExample(TbUserAddrExample example);
 
