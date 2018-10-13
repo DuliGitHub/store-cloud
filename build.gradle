@@ -20,7 +20,7 @@ task wrapper(type: Wrapper) {
 }
 
 configure(allprojects) { project ->
-    group = 'com.duli'
+    group = 'com.store'
     version = version
 
     ext.springCloudVersion          = 'Dalston.RELEASE'
