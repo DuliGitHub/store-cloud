@@ -1,14 +1,10 @@
 package com.duli.utils.impl;
 
-import cn.binux.utils.JedisClient;
+import com.duli.utils.JedisClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import redis.clients.jedis.JedisCluster;
 
 
-/**
- * @author 許彬.
- * @creater 2016-08-22 16:38
- */
 public class JedisClientCluster implements JedisClient {
 
     @Autowired

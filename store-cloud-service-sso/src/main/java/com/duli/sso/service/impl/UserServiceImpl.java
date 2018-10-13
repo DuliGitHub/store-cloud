@@ -7,13 +7,11 @@ import com.duli.sso.service.UserService;
 import com.duli.utils.FastJsonConvert;
 import com.duli.utils.JedisClient;
 import com.duli.mapper.TbUserMapper;
-import io.swagger.annotations.*;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,13 +21,10 @@ import java.util.*;
 /**
  * 用户登录相关服务 Service 实现
  *
- * @author xubin.
- * @create 2017-05-05
  */
 
-@Api(value = "API - UserServiceImpl", description = "sso 服务")
+
 @RestController
-@RefreshScope
 public class UserServiceImpl implements UserService {
 
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
@@ -81,22 +76,6 @@ public class UserServiceImpl implements UserService {
      *          data: "fe5cb546aeb3ce1bf37abcb08a40493e" //登录成功，返回token
      *         }
      */
-    @Override
-    @ApiOperation("用户登录")
-    @ApiImplicitParams(
-            {
-                    @ApiImplicitParam(name = "user", value = "", required = true, dataType = "TbUser"),
-            }
-    )
-    @ApiResponses(
-            {
-                    @ApiResponse(code = 200, message = "Successful — 请求已完成"),
-                    @ApiResponse(code = 400, message = "请求中有语法问题，或不能满足请求"),
-                    @ApiResponse(code = 401, message = "未授权客户机访问数据"),
-                    @ApiResponse(code = 404, message = "服务器找不到给定的资源；文档不存在"),
-                    @ApiResponse(code = 500, message = "服务器不能完成请求")
-            }
-    )
     public XbinResult login(@RequestBody TbUser user) {
 
         if (user == null) {
@@ -149,23 +128,7 @@ public class UserServiceImpl implements UserService {
      *          data: {"username":"xbin","id":"id"} //返回用户名
      *         }
      */
-    @Override
-    @ApiOperation("获取token")
-    @ApiImplicitParams(
-            {
-                    @ApiImplicitParam(name = "token", value = "", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "callback", value = "", required = true, dataType = "String"),
-            }
-    )
-    @ApiResponses(
-            {
-                    @ApiResponse(code = 200, message = "Successful — 请求已完成"),
-                    @ApiResponse(code = 400, message = "请求中有语法问题，或不能满足请求"),
-                    @ApiResponse(code = 401, message = "未授权客户机访问数据"),
-                    @ApiResponse(code = 404, message = "服务器找不到给定的资源；文档不存在"),
-                    @ApiResponse(code = 500, message = "服务器不能完成请求")
-            }
-    )
+
     public XbinResult token(String token, String callback) {
 
         if (StringUtils.isNotBlank(callback)) {
@@ -201,23 +164,6 @@ public class UserServiceImpl implements UserService {
      *          data: null
      *         }
      */
-    @Override
-    @ApiOperation("退出登录")
-    @ApiImplicitParams(
-            {
-                    @ApiImplicitParam(name = "token", value = "", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "callback", value = "", required = true, dataType = "String"),
-            }
-    )
-    @ApiResponses(
-            {
-                    @ApiResponse(code = 200, message = "Successful — 请求已完成"),
-                    @ApiResponse(code = 400, message = "请求中有语法问题，或不能满足请求"),
-                    @ApiResponse(code = 401, message = "未授权客户机访问数据"),
-                    @ApiResponse(code = 404, message = "服务器找不到给定的资源；文档不存在"),
-                    @ApiResponse(code = 500, message = "服务器不能完成请求")
-            }
-    )
     public XbinResult logout(String token, String callback) {
 
         if (StringUtils.isNotBlank(callback)) {
@@ -245,25 +191,7 @@ public class UserServiceImpl implements UserService {
      *          "morePin":["sssss740","sssss5601","sssss76676"] //isEngaged = isPinEngaged时返回推荐
      *         }
      */
-    @Override
-    @ApiOperation("注册检查是否可用")
-    @ApiImplicitParams(
-            {
-                    @ApiImplicitParam(name = "isEngaged", value = "", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "regName", value = "", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "email", value = "", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "phone", value = "", required = true, dataType = "String"),
-            }
-    )
-    @ApiResponses(
-            {
-                    @ApiResponse(code = 200, message = "Successful — 请求已完成"),
-                    @ApiResponse(code = 400, message = "请求中有语法问题，或不能满足请求"),
-                    @ApiResponse(code = 401, message = "未授权客户机访问数据"),
-                    @ApiResponse(code = 404, message = "服务器找不到给定的资源；文档不存在"),
-                    @ApiResponse(code = 500, message = "服务器不能完成请求")
-            }
-    )
+
     public String validateUser(String isEngaged,String regName,String email,String phone) {
 
         Random random = new Random();
@@ -358,23 +286,6 @@ public class UserServiceImpl implements UserService {
      *          "success": 0 可用 1 不可用
      *         }
      */
-    @Override
-    @ApiOperation("验证验证码")
-    @ApiImplicitParams(
-            {
-                    @ApiImplicitParam(name = "authCode", value = "", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "uuid", value = "", required = true, dataType = "String"),
-            }
-    )
-    @ApiResponses(
-            {
-                    @ApiResponse(code = 200, message = "Successful — 请求已完成"),
-                    @ApiResponse(code = 400, message = "请求中有语法问题，或不能满足请求"),
-                    @ApiResponse(code = 401, message = "未授权客户机访问数据"),
-                    @ApiResponse(code = 404, message = "服务器找不到给定的资源；文档不存在"),
-                    @ApiResponse(code = 500, message = "服务器不能完成请求")
-            }
-    )
     public String validateAuthCode(String authCode, String uuid) {
 
         HashMap<String, Integer> map = new HashMap<>();
@@ -432,29 +343,6 @@ public class UserServiceImpl implements UserService {
      * @param uuid          Redis验证码uuid
      * @return
      */
-    @Override
-    @ApiOperation("注册")
-    @ApiImplicitParams(
-            {
-                    @ApiImplicitParam(name = "regName", value = "", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "pwd", value = "", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "pwdRepeat", value = "", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "phone", value = "", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "mobileCode", value = "", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "uuid", value = "", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "authCode", value = "", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "email", value = "", required = true, dataType = "String"),
-            }
-    )
-    @ApiResponses(
-            {
-                    @ApiResponse(code = 200, message = "Successful — 请求已完成"),
-                    @ApiResponse(code = 400, message = "请求中有语法问题，或不能满足请求"),
-                    @ApiResponse(code = 401, message = "未授权客户机访问数据"),
-                    @ApiResponse(code = 404, message = "服务器找不到给定的资源；文档不存在"),
-                    @ApiResponse(code = 500, message = "服务器不能完成请求")
-            }
-    )
     public String register(String regName, String pwd, String pwdRepeat, String phone, String mobileCode, String uuid, String authCode, String email) {
 
         if (!pwd.equals(pwdRepeat)) {

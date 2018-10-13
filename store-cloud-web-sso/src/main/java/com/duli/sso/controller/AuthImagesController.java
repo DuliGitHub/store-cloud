@@ -21,10 +21,7 @@ import java.io.IOException;
  * 验证码 Controller
  *
  */
-
-@Api(value = "API - AuthImagesController", description = "验证码 Controller")
 @Controller
-@RefreshScope
 public class AuthImagesController {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthImagesController.class);

@@ -8,10 +8,6 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 
-/**
- * @author 許彬.
- * @creater 2017-04-22
- */
 public class JedisClientSingle implements JedisClient {
 
     @Autowired

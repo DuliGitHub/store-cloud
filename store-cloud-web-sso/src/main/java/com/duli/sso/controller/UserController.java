@@ -3,6 +3,7 @@ package com.duli.sso.controller;
 import com.duli.constant.Const;
 import com.duli.pojo.TbUser;
 import com.duli.pojo.XbinResult;
+import com.duli.service.NotifyUserService;
 import com.duli.sso.service.UserService;
 import com.duli.utils.CookieUtils;
 import io.swagger.annotations.Api;
@@ -34,7 +35,7 @@ public class UserController {
     private UserService userService;
 
     @Autowired
-//    private NotifyUserService notifyUserService;
+    private NotifyUserService notifyUserService;
 
     @Value("${user_not_exist}")
     private String USER_NOT_EXIST;

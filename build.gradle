@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.5.16.RELEASE'
+        springBootVersion = '1.5.3.RELEASE'
     }
     repositories {
         mavenLocal()
@@ -58,7 +58,6 @@ configure(allprojects) { project ->
 
     apply plugin: "java"
     apply plugin: 'idea'
-    apply plugin: 'eclipse'
 
     if (!(name.contains('common'))) {
         apply plugin: 'org.springframework.boot'
@@ -124,8 +123,8 @@ project("store-cloud-common") {
         compile("com.alibaba:fastjson:${fastjsonVersion}")
         compile("net.oschina.zcx7878:fastdfs-client-java:${fastdfsVersion}")
         compile("org.slf4j:slf4j-api:${slf4jVersion}")
-        compile("io.springfox:springfox-swagger-ui:${swagger2Version}")
-        compile("io.springfox:springfox-swagger2:${swagger2Version}")
+//        compile("io.springfox:springfox-swagger-ui:${swagger2Version}")
+//        compile("io.springfox:springfox-swagger2:${swagger2Version}")
     }
 }
 
@@ -148,7 +147,7 @@ project("store-cloud-service-sso") {
         compile("org.springframework.cloud:spring-cloud-starter-zipkin")
         compile("org.springframework.cloud:spring-cloud-starter-hystrix")
         compile("org.springframework.cloud:spring-cloud-starter-bus-amqp")
-        compile("org.webjars.npm:apollo-client:${apolloclientVersion}")
+//        compile("org.webjars.npm:apollo-client:${apolloclientVersion}")
 //        compile("org.springframework.data:spring-data-redis") //鏆傛椂涓嶄娇鐢�
         compile("org.springframework.boot:spring-boot-starter-redis:${springBootRedisVersion}")
         compile("org.freemarker:freemarker:2.3.9")
@@ -190,7 +189,7 @@ project("store-cloud-web-sso") {
 
     dependencies {
         compile(project(":store-cloud-service-sso-api"))
-//        compile(project(":xbin-store-cloud-service-notify-api"))
+        compile(project(":store-cloud-service-notify-api"))
         compile("org.springframework.boot:spring-boot-starter-web")
         compile("org.springframework.cloud:spring-cloud-starter-eureka")
         compile("org.webjars.npm:apollo-client:${apolloclientVersion}")
