@@ -1,4 +1,5 @@
-
+# swagger2
+swagger2.package: com.store.sso.controller
 
 #配置模板想到classpath路径，后面须加上"/"
 beetl:

@@ -9,6 +9,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import redis.clients.jedis.JedisPool;
 
 @SpringBootApplication
 @EnableEurekaClient
@@ -21,7 +22,10 @@ public class StoreCloudWebSsoApplication {
     public static void main(String[] args) {
         SpringApplication.run(StoreCloudWebSsoApplication.class, args);
     }
-
+    @Bean
+    public JedisPool jedisPool(){
+        return new JedisPool();
+    }
     @Bean
     public JedisClient jedisClient() {
         return new JedisClientSingle();

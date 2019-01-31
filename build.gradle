@@ -124,6 +124,8 @@ project("store-cloud-common") {
         compile("com.alibaba:fastjson:${fastjsonVersion}")
         compile("net.oschina.zcx7878:fastdfs-client-java:${fastdfsVersion}")
         compile("org.slf4j:slf4j-api:${slf4jVersion}")
+        compile("io.springfox:springfox-swagger-ui:${swagger2Version}")
+        compile("io.springfox:springfox-swagger2:${swagger2Version}")
     }
 }
 
@@ -146,10 +148,10 @@ project("store-cloud-service-sso") {
         compile("org.springframework.cloud:spring-cloud-starter-zipkin")
         compile("org.springframework.cloud:spring-cloud-starter-hystrix")
         compile("org.springframework.cloud:spring-cloud-starter-bus-amqp")
-//        compile("org.webjars.npm:apollo-client:${apolloclientVersion}")
+        compile("org.webjars.npm:apollo-client:${apolloclientVersion}")
 //        compile("org.springframework.data:spring-data-redis") //鏆傛椂涓嶄娇鐢�
         compile("org.springframework.boot:spring-boot-starter-redis:${springBootRedisVersion}")
-        compile("org.freemarker:freemarker:2.3.9")
+        compile("org.freemarker:freemarker:2.3.23")
     }
 }
 project("store-cloud-common-pojo") {

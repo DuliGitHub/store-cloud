@@ -12,9 +12,11 @@ management:
     enabled: false
 
 eureka:
+  instance:
+    status-page-url: http://localhost:${server.port}/swagger-ui.html # ${server.port}为该服务的端口号
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8503/eureka/
+      defaultZone: ${eureka.serviceUrl:http://127.0.0.1:8761/eureka/}
 
 feign:
   hystrix:

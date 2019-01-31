@@ -2,6 +2,8 @@ package com.store.sso.controller;
 
 import com.store.sso.utils.VerifyCodeUtils;
 import com.store.utils.JedisClient;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +33,8 @@ public class AuthImagesController {
     @Value("${redisKey.expire_time}")
     private Integer EXPIRE_TIME;
 
-
+    @ApiOperation(value = "生成图片验证码",notes = "需要传递一个uuid作为用户本次登录的唯一表示")
+    @ApiImplicitParam(name = "uid",value = "每个 uid 对应一次用户登录",required = true,dataType = "String")
     @RequestMapping(value = "/verify/image", method = RequestMethod.GET)
     public void verifyimage(String uid, HttpServletResponse response) {
         response.setHeader("Pragma", "No-cache");
